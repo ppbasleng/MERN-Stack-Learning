@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/students', studentRoute)
 
+
 //PORT
 const port = process.env.PORT || 4000;
 const server = app.listen(port, ()=>{
