@@ -6,7 +6,6 @@ const CreateStudent = lazy(() => import("../components/CreateStudent"));
 const EditStudent = lazy(() => import("../components/EditStudent"));
 const StudentList = lazy(() => import("../components/StudentList"));
 
-console.log(CreateStudent)
 export default function AppRoutes() {
     return (
 

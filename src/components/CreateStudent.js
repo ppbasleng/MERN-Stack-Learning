@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import StudentAPI from '../api/StudentAPI'
+
 
 export default function CreateStudent() {
   const [Name, setName] = useState()
@@ -8,7 +10,11 @@ export default function CreateStudent() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(Name, Email, Roll)
+
+    const data = {name:Name,email:Email,roll:Roll}
+    console.log(data)
+    StudentAPI.createStudent(data)
+
     setName('')
     setEmail('')
     setRoll('')
@@ -16,7 +22,7 @@ export default function CreateStudent() {
 
   return (
     <div className="form-wrapper mt-5">
-      <h1>Create Student</h1>
+      <h1>Create Student {process.env.REACT_APP_APP_NAME}</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="Name">
           <Form.Label>Name</Form.Label>
